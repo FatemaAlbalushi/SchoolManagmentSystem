@@ -7,6 +7,9 @@
  * You can Register Student, Manage Student, Hire Teacher, Manage Teacher
  */
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner; 
 
 
@@ -16,6 +19,11 @@ public class School {
 		
 		{
 			Scanner input = new Scanner(System.in);
+			//ArrayList<String> studentArrayList = new ArrayList<String>();
+			String student[] = new String[3];
+			int studenti[] = new int[3];
+			String studentE[] = new String[3];
+			
 			
 			
 			System.out.println("Wellcome to School Management System ");
@@ -42,20 +50,33 @@ public class School {
 				System.out.println("Your option is: ");
 				System.out.println("-------------------");
 				int menuNum = input.nextInt();
-				if (menuNum==1) {
-				  
-					System.out.println("Enter Student Name: ");
-					String StudentName  = new Scanner(System.in).nextLine(); 
-					System.out.println("-------------------");
-					System.out.println("Enter Student Id: ");
-					int StudentId  = new Scanner(System.in).nextInt(); 
-					System.out.println("-------------------");
-					System.out.println("Enter Student Email: ");
-					String StudentEmail = new Scanner(System.in).nextLine();
-					System.out.println("-------------------");
+				if (menuNum==1) 
+				{
 					
-				
-					System.out.println("Student with name "+StudentName+ "  Id " + StudentId + " and Email "+ StudentEmail + "Was created Succesesfully");	
+					for (int i = 0; i < student.length; i++) 
+					{
+						System.out.println("Enter Student Name: ");
+						String StudentName  = new Scanner(System.in).nextLine(); 
+						System.out.println("-------------------");
+						student[i]= StudentName;
+						
+						System.out.println("Enter Student Id: ");
+						int StudentId  = new Scanner(System.in).nextInt(); 
+						studenti[i]= StudentId;
+						
+						System.out.println("Enter Student Email: ");
+						String StudentEmail = new Scanner(System.in).nextLine();
+						studentE[i]= StudentEmail;
+					
+						
+					}
+					for (int i = 0; i < student.length; i++) {
+						  System.out.println("Student " + i + 
+						                                " : "+ student[i]+ "  " + studenti[i] +"  " + studentE[i]);
+						
+					
+					}
+
 				}
 			}
 		
